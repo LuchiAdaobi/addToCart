@@ -1,0 +1,73 @@
+html, body {
+    margin: 0;
+    padding: 0; 
+    font-family: 'Rubik', sans-serif;
+    color: #432000;
+    user-select: none;
+    background-color: #783037;
+}
+.container {
+    background-color: #240414;
+    max-width: 350px;
+    margin: 2rem auto;
+    border: 2px solid #000;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+}
+.img{
+    margin: 0 auto;
+}
+
+
+input, button { 
+    color: #432000;
+    background-color: #DCE1EB; 
+    margin-top: .4rem;
+    padding: .4rem;
+    text-align: center;
+    border: none;
+    border-radius: .2rem;
+    font-size: 1.3rem;
+}
+input:focus{
+    outline: none;
+}
+
+button { 
+    color: #FDFDFD;
+    background-color: #AC485A;
+    display: block;
+    padding: .4rem 5.2rem;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #490828;
+    /* background-color: #FFFDF8; */
+    /* color: #432000; */
+
+}
+
+ul#shopping-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .8rem;   
+    color: #432000;
+    font-size: 1.3rem;
+}
+ul#shopping-list li {
+    padding: .8rem 1.4rem;
+    border-radius: .3rem;
+    flex-grow: 1;
+    cursor: pointer;
+    text-align: center;
+    background-color: #FFFDF8;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2)
+}
+ul#shopping-list li:hover{
+    background-color: #FFECC7;
+} 
