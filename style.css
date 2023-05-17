@@ -71,3 +71,11 @@ ul#shopping-list li {
 ul#shopping-list li:hover{
     background-color: #FFECC7;
 } 
+
+
+@media screen and (max-width: 500px) {
+  .container{
+    max-width: 280px;
+    padding: 1rem;
+  }
+}
