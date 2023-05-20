@@ -15,7 +15,6 @@ const appSettings = {
 const app = initializeApp(appSettings);
 const database = getDatabase(app);
 const shoppingListInDB = ref(database, "shoppingList");
-// const bookListInDB = ref(database, "books");
 
 const btnEl = document.getElementById("add-btn");
 const inputEl = document.getElementById("input-field");
@@ -32,11 +31,11 @@ btnEl.addEventListener("click", function () {
 onValue(shoppingListInDB, function (snapshot) {
     if(!snapshot.exists()){
       shoppingListEl.textContent = 'No items here... yet'
+      shoppingListEl.classList.add('white')
       return
     }
   let itemsArray = Object.entries(snapshot.val());
   clearShoppingListEl();
-
 
   for (let i = 0; i < itemsArray.length; i++) {
     let currentItem = itemsArray[i]
@@ -49,10 +48,14 @@ function appendItemToShoppingListEl(item) {
     let itemValue = item[1]
 
     let newEl = document.createElement('li');
+    let newElBtn = document.createElement('button')
     newEl.textContent =`${itemValue}`
+    newElBtn.textContent =`X`
+
+    newEl.append(newElBtn)
     shoppingListEl.append(newEl)
 
-    newEl.addEventListener('dblclick', ()=> {
+    newElBtn.addEventListener('click', ()=> {
         let exactLocationOfItemInDB = ref(database,`shoppingList/${itemID}` )
         remove(exactLocationOfItemInDB)
     })
